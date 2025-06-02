@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "dharitri_sdk_wallet"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

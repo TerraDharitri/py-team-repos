@@ -1,0 +1,4 @@
+pytest
+flake8
+autopep8
+dharitri_sdk_core>=0.4.1
