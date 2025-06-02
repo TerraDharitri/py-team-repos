@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project]
+name = "dharitri-sdk-transaction-decoder"
+version = "0.4.0"
+authors = [
+  { name="DharitrI" },
+]
+license = "MIT"
+description = "Deprecated. Instead, use dharitri-sdk."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 7 - Inactive",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "dharitri-sdk-core>=0.7.0,<0.8.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/TerraDharitri/drt-py-sdk-transaction-decoder"
+
+[tool.hatch.build.targets.wheel]
+packages = ["transaction_decoder"]
