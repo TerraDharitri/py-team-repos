@@ -1,0 +1,29 @@
+# Publish devcontainer template artifacts. See them here: 
+# https://github.com/orgs/TerraDharitri/packages?repo_name=drt-template-devcontainers
+# 
+# - Package "drt-template-devcontainers": not versioned, tagged as "latest"
+# - Package "smart-contracts-rust": versioned according to src/smart-contracts-rust/devcontainer-template.json
+
+name: Publish templates
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Publish"
+        uses: devcontainers/action@v1.4.3
+        with:
+          disable-repo-tagging: false
+          publish-templates: true
+          base-path-to-templates: "./src"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

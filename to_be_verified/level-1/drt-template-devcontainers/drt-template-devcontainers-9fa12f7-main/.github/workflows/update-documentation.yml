@@ -1,0 +1,43 @@
+name: "Update Documentation"
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate Documentation
+        uses: devcontainers/action@v1.4.3
+        with:
+          generate-docs: "true"
+          base-path-to-templates: "./src"
+
+      - name: Create a branch for documentation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          echo "Start."
+
+          # Configure git and Push updates
+          git config --global user.email github-actions@github.com
+          git config --global user.name github-actions
+          git config pull.rebase false
+
+          branch=automated-documentation-update-$GITHUB_RUN_ID
+          git checkout -b $branch
+
+          # Add / update and commit
+          git add */**/README.md
+          git commit -m 'Automated documentation update' || export NO_UPDATES=true
+
+          # Push to temporary branch. Changes should be manually added to a separate branch (PR),
+          # since signed automated commits aren't easily supported on GitHub Actions (yet).
+          if [ "$NO_UPDATES" != "true" ] ; then
+              git push origin "$branch"
+          fi

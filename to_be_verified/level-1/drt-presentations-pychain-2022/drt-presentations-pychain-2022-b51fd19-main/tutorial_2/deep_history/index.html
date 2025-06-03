@@ -1,0 +1,163 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Deep-history Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mt-4 context-view">
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-info">
+                                        <input type="radio" name="network" value="devnet">Devnet
+                                    </label>
+                                    <label class="btn btn-info">
+                                        <input type="radio" name="network" value="mainnet">Mainnet
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-sm-12 queries-view">
+                <form class="query small mt-2">
+                    <button class="btn btn-sm btn-info">Run</button>
+                    <kbd class="part">api</kbd>
+                    <strong class="part">/</strong>
+                    <kbd class="part network"></kbd>
+                    <strong class="part">/</strong>
+                    <kbd class="part">accounts</kbd>
+                    <strong class="part">/</strong>
+                    <input class="part address" type="text" required size="62" maxlength="62" data-toggle="tooltip"
+                        title="Example: drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf" />
+                    <strong class="part">/</strong>
+                    <strong><kbd class="part">native</kbd></strong>
+                    <strong class="part">?</strong>
+                    <kbd class="part">timestamp</kbd>
+                    <strong class="part">=</strong>
+                    <input class="part" type="text" size="19" maxlength="19" data-toggle="tooltip"
+                        title="Example: 2022-11-01T12:00:00" />
+                    <!-- <strong class="part">&</strong>
+                    <kbd class="part">blockNonce</kbd>
+                    <strong class="part">=</strong>
+                    <input class="part" type="text" data-toggle="tooltip" title="Example: 42" /> -->
+                </form>
+
+                <form class="query small mt-2">
+                    <button class="btn btn-sm btn-info">Run</button>
+                    <kbd class="part">api</kbd>
+                    <strong class="part">/</strong>
+                    <kbd class="part network"></kbd>
+                    <strong class="part">/</strong>
+                    <kbd class="part">accounts</kbd>
+                    <strong class="part">/</strong>
+                    <input class="part address" type="text" required size="62" maxlength="62" data-toggle="tooltip"
+                        title="Example: drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf" />
+                    <strong class="part">/</strong>
+                    <strong><kbd class="part">token</kbd></strong>
+                    <strong class="part">/</strong>
+                    <input class="part" type="text" required size="20" maxlength="20" data-toggle="tooltip"
+                        title="Example: FOO-abcdef" />
+                    <strong class="part">?</strong>
+                    <kbd class="part">timestamp</kbd>
+                    <strong class="part">=</strong>
+                    <input class="part" type="text" size="19" maxlength="19" data-toggle="tooltip"
+                        title="Example: 2022-11-01T12:00:00" />
+                    <!-- <strong class="part">&</strong>
+                    <kbd class="part">blockNonce</kbd>
+                    <strong class="part">=</strong>
+                    <input class="part" type="text" data-toggle="tooltip" title="Example: 42" /> -->
+                </form>
+
+                <form class="query small mt-2">
+                    <button class="btn btn-sm btn-info">Run</button>
+                    <kbd class="part">api</kbd>
+                    <strong class="part">/</strong>
+                    <kbd class="part network"></kbd>
+                    <strong class="part">/</strong>
+                    <kbd class="part">accounts</kbd>
+                    <strong class="part">/</strong>
+                    <input class="part address" type="text" required size="62" maxlength="62" data-toggle="tooltip"
+                        title="Example: drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf" />
+                    <strong class="part">/</strong>
+                    <strong><kbd class="part">storage</kbd></strong>
+                    <strong class="part">?</strong>
+                    <kbd class="part">timestamp</kbd>
+                    <strong class="part">=</strong>
+                    <input class="part" type="text" size="19" maxlength="19" data-toggle="tooltip"
+                        title="Example: 2022-11-01T12:00:00" />
+                    <!-- <strong class="part">&</strong>
+                    <kbd class="part">blockNonce</kbd>
+                    <strong class="part">=</strong>
+                    <input class="part" type="text" data-toggle="tooltip" title="Example: 42" /> -->
+                </form>
+
+                <form class="query small mt-2">
+                    <button class="btn btn-sm btn-info">Run</button>
+                    <kbd class="part">api</kbd>
+                    <strong class="part">/</strong>
+                    <kbd class="part network"></kbd>
+                    <strong class="part">/</strong>
+                    <kbd class="part">accounts</kbd>
+                    <strong class="part">/</strong>
+                    <input class="part address" type="text" required size="62" maxlength="62" data-toggle="tooltip"
+                        title="Example: drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf" />
+                    <strong class="part">/</strong>
+                    <strong><kbd class="part">storage</kbd></strong>
+                    <strong class="part">/</strong>
+                    <input class="part" type="text" required size="32" maxlength="256" data-toggle="tooltip"
+                        title="State key (hex)" />
+                    <strong class="part">?</strong>
+                    <kbd class="part">timestamp</kbd>
+                    <strong class="part">=</strong>
+                    <input class="part" type="text" size="19" maxlength="19" data-toggle="tooltip"
+                        title="Example: 2022-11-01T12:00:00" />
+                    <!-- <strong class="part">&</strong>
+                    <kbd class="part">blockNonce</kbd>
+                    <strong class="part">=</strong>
+                    <input class="part" type="text" data-toggle="tooltip" title="Example: 42" /> -->
+                </form>
+
+                <div class="card mt-4">
+                    <div class="card-header">Response</div>
+                    <div class="card-body">
+                        <div class="response"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
+                integrity="sha512-eHWYortWe2NyxHIiY/wY82nK4RlPIDDDSD5ZvTHrTkiq9tAe++DBhq5rDcC02xqHxh0ctGGMbHKotqtYcYgXZA=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+                integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+            <script src="/static/lib.js"></script>
+            <script src="/static/app.js"></script>
+
+            <script>
+                $(async function () {
+                    const application = new Application();
+                    await application.main();
+                });
+            </script>
+</body>
+
+</html>

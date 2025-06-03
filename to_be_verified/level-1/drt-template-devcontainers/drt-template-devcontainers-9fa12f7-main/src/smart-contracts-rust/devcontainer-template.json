@@ -1,0 +1,11 @@
+{
+    "id": "smart-contracts-rust",
+    "version": "0.3.0",
+    "name": "DharitrI: Smart Contracts Development (Rust)",
+    "description": "Develop smart contracts for DharitrI. Includes Rust, drtpy, VSCode extensions etc.",
+    "documentationURL": "https://github.com/TerraDharitri/drt-template-devcontainers/blob/main/src/smart-contracts-rust",
+    "publisher": "DharitrI",
+    "licenseURL": "https://github.com/TerraDharitri/drt-template-devcontainers/blob/main/LICENSE",
+    "options": {},
+    "platforms": []
+}

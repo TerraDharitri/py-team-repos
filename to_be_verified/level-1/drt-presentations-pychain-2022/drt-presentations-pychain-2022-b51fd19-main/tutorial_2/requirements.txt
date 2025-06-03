@@ -1,0 +1,5 @@
+bottle
+gunicorn
+requests==2.24.0
+git+https://git@github.com/TerraDharitri/drt-sdk-drtpy-core.git@v0.1.0#egg=drtpy_core
+git+https://git@github.com/TerraDharitri/drt-sdk-drtpy-network-providers.git@next-12-01#egg=drtpy_network
