@@ -24,4 +24,4 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/TerraDharitri/mx-sdk-py-core"
+"Homepage" = "https://github.com/TerraDharitri/drt-py-sdk-core"

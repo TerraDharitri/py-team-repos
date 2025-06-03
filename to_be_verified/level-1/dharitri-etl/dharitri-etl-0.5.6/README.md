@@ -92,10 +92,10 @@ docker compose --file ./docker/docker-compose.yml \
 
 ## Generate schema files
 
-Maintainers of this repository should trigger a re-generation of the BigQuery schema files whenever the Elasticsearch schema is updated. This is done by running the following command (make sure to check out [mx-chain-tools-go](https://github.com/TerraDharitri/mx-chain-tools-go) in advance):
+Maintainers of this repository should trigger a re-generation of the BigQuery schema files whenever the Elasticsearch schema is updated. This is done by running the following command (make sure to check out [drt-go-chain-tools](https://github.com/TerraDharitri/drt-go-chain-tools) in advance):
 
 ```
-python3 -m dharitrietl.app regenerate-schema --input-folder=~/mx-chain-tools-go/elasticreindexer/cmd/indices-creator/config/noKibana/ --output-folder=./schema
+python3 -m dharitrietl.app regenerate-schema --input-folder=~/drt-go-chain-tools/elasticreindexer/cmd/indices-creator/config/noKibana/ --output-folder=./schema
 ```
 
 The resulting files should be committed to this repository.

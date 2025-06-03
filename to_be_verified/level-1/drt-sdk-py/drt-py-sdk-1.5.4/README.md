@@ -1,11 +1,11 @@
-# mx-sdk-py
+# drt-py-sdk
 
 The Python SDK for interacting with DharitrI. It's an all in one sdk that can be used to create transactions (including smart contract calls and deployments), sign and broadcast transactions, create wallets and many more.
 
 ## Documentation
 
 - [Cookbook](./examples/v1.ipynb)
-- [Auto-generated documentation](https://TerraDharitri.github.io/mx-sdk-py/)
+- [Auto-generated documentation](https://TerraDharitri.github.io/drt-py-sdk/)
 
 ## Development setup
 

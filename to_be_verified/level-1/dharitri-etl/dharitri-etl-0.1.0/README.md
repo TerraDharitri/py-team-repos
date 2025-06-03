@@ -14,7 +14,7 @@ pip install -r ./requirements-dev.txt --upgrade
 ## Generate schema files
 
 ```
-python3 -m dharitrietl generate-schema --input-folder=~/mx-chain-tools-go/elasticreindexer/cmd/indices-creator/config/noKibana/ --output-folder=./schema
+python3 -m dharitrietl generate-schema --input-folder=~/drt-go-chain-tools/elasticreindexer/cmd/indices-creator/config/noKibana/ --output-folder=./schema
 ```
 
 ## Quickstart

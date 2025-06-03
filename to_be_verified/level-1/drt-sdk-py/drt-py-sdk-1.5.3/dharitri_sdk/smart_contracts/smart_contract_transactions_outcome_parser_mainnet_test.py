@@ -13,7 +13,7 @@ from dharitri_sdk.smart_contracts.smart_contract_transactions_outcome_parser imp
 @pytest.mark.mainnet
 class TestSmartContractDeployMainnet:
     parser = SmartContractTransactionsOutcomeParser()
-    network_config = NetworkProviderConfig(client_name="mx-sdk-py/tests")
+    network_config = NetworkProviderConfig(client_name="drt-py-sdk/tests")
     provider = ProxyNetworkProvider(url="https://gateway.dharitri.org", config=network_config)
 
     def test_should_parse_execute(self):

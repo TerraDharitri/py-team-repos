@@ -154,7 +154,7 @@ def test_user_wallet_encrypt_then_decrypt():
 
 def test_sign_transaction():
     """
-    Also see: https://github.com/TerraDharitri/mx-chain-go/blob/master/examples/construction_test.go
+    Also see: https://github.com/TerraDharitri/drt-chain-go/blob/master/examples/construction_test.go
     """
 
     tx = Transaction(

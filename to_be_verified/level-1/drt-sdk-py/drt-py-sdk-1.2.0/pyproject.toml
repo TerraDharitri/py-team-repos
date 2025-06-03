@@ -33,7 +33,7 @@ dependencies = [
 ledger = ["ledgercomm[hid]"]
 
 [project.urls]
-"Homepage" = "https://github.com/TerraDharitri/mx-sdk-py"
+"Homepage" = "https://github.com/TerraDharitri/drt-py-sdk"
 
 [tool.hatch.build]
 include = [

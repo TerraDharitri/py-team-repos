@@ -1,10 +1,10 @@
-# mx-sdk-py-core
+# drt-py-sdk-core
 
 Core components of the DharitrI Python SDK.
 
 ## Distribution
  
- - GitHub: `git+https://git@github.com/TerraDharitri/mx-sdk-py-core.git@v{Version}#egg=dharitri_sdk_core`
+ - GitHub: `git+https://git@github.com/TerraDharitri/drt-py-sdk-core.git@v{Version}#egg=dharitri_sdk_core`
  - [PyPi](https://pypi.org/user/terradharitri/)
 
 ## Documentation
