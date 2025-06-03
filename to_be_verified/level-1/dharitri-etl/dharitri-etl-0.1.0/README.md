@@ -1,7 +1,7 @@
 
 ## Setup virtual environment
 
-Create a virtual environment and install the dependencies:
+Create virtual environment and install the dependencies:
 
 ```
 python3 -m venv ./venv
