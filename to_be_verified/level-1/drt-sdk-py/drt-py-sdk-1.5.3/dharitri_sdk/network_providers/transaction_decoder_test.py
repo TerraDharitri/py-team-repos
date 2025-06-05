@@ -18,7 +18,7 @@ class TestTransactionDecoder:
         )
         tx_to_decode.value = 0
         tx_to_decode.data = base64.b64decode(
-            "RVNEVE5GVFRyYW5zZmVyQDRjNGI0ZDQ1NTgyZDYxNjE2MjM5MzEzMEAyZmI0ZTlAZTQwZjE2OTk3MTY1NWU2YmIwNGNAMDAwMDAwMDAwMDAwMDAwMDA1MDBkZjNiZWJlMWFmYTEwYzQwOTI1ZTgzM2MxNGE0NjBlMTBhODQ5ZjUwYTQ2OEA3Mzc3NjE3MDVmNmM2YjZkNjU3ODVmNzQ2ZjVmNjU2NzZjNjRAMGIzNzdmMjYxYzNjNzE5MUA="
+            "RENEVE5GVFRyYW5zZmVyQDRjNGI0ZDRmNDEyZDYxNjE2MjM5MzEzMEAyZmI0ZTlAZTQwZjE2OTk3MTY1NWU2YmIwNGNAMDAwMDAwMDAwMDAwMDAwMDA1MDBkZjNiZWJlMWFmYTEwYzQwOTI1ZTgzM2MxNGE0NjBlMTBhODQ5ZjUwYTQ2OEA3Mzc3NjE3MDVmNmM2YjZkNmY2MTVmNzQ2ZjVmNzI2NTc3NjFAMGIzNzdmMjYxYzNjNzE5MUA="
         )
 
         metadata = self.transaction_decoder.get_transaction_metadata(tx_to_decode)
@@ -38,7 +38,7 @@ class TestTransactionDecoder:
 
         tx_to_decode.sender = Address.new_from_bech32("drt1wcn58spj6rnsexugjq3p2fxxq4t3l3kt7np078zwkrxu70ul69fq3c9sr5")
         tx_to_decode.receiver = Address.new_from_bech32(
-            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+            "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         )
         tx_to_decode.value = 0
         tx_to_decode.data = base64.b64decode("d2l0aGRyYXdHbG9iYWxPZmZlckAwMTczZDA=")
@@ -46,7 +46,7 @@ class TestTransactionDecoder:
         metadata = self.transaction_decoder.get_transaction_metadata(tx_to_decode)
 
         assert metadata.sender == "drt1wcn58spj6rnsexugjq3p2fxxq4t3l3kt7np078zwkrxu70ul69fq3c9sr5"
-        assert metadata.receiver == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+        assert metadata.receiver == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         assert metadata.function_name == "withdrawGlobalOffer"
         assert metadata.function_args == ["0173d0"]
 
@@ -85,15 +85,15 @@ class TestTransactionDecoder:
 
         tx_to_decode.sender = Address.new_from_bech32("drt1wcn58spj6rnsexugjq3p2fxxq4t3l3kt7np078zwkrxu70ul69fq3c9sr5")
         tx_to_decode.receiver = Address.new_from_bech32(
-            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+            "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         )
         tx_to_decode.value = 0
-        tx_to_decode.data = base64.b64decode("RVNEVFRyYW5zZmVyQDU0NDU1MzU0MmQzMjY1MzQzMDY0MzdAMDI1NDBiZTQwMA==")
+        tx_to_decode.data = base64.b64decode("RENEVFRyYW5zZmVyQDU0NDU1MzU0MmQzMjY1MzQzMDY0MzdAMDI1NDBiZTQwMA==")
 
         metadata = self.transaction_decoder.get_transaction_metadata(tx_to_decode)
 
         assert metadata.sender == "drt1wcn58spj6rnsexugjq3p2fxxq4t3l3kt7np078zwkrxu70ul69fq3c9sr5"
-        assert metadata.receiver == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+        assert metadata.receiver == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         assert metadata.value == 10000000000
         assert metadata.function_args is None
         if metadata.transfers:
@@ -182,7 +182,7 @@ class TestTransactionDecoder:
             "drt1athw37lnw4t4d7ax9t5x9l4hvfay3qfp0k4ldxgq2wv94ln6vuesa3rc3k"
         )
         tx_to_decode.data = base64.b64decode(
-            "RVNEVFRyYW5zZmVyQDRjNDE0ZTQ0MmQzNDMwNjYzMjM2NjZAMDI2NWYwYTQ3ZGQ0NGMwMDAwQGVhZWVlOGZiZjM3NTU3NTZmYmE2MmFlODYyZmViNzYyN2E0ODgxMjE3ZGFiZjY5OTAwNTM5ODVhZmU3YTY3MzM="
+            "RENEVFRyYW5zZmVyQDRjNDE0ZTQ0MmQzNDMwNjYzMjM2NjZAMDI2NWYwYTQ3ZGQ0NGMwMDAwQGVhZWVlOGZiZjM3NTU3NTZmYmE2MmFlODYyZmViNzYyN2E0ODgxMjE3ZGFiZjY5OTAwNTM5ODVhZmU3YTY3MzM="
         )
 
         transaction_decoder = TransactionDecoder()
@@ -237,11 +237,11 @@ class TestTransactionDecoder:
     def test_dcdtnft_transfer_separated_messages(self):
         tx_to_decode = get_empty_transaction_on_network()
 
-        tx_to_decode.sender = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        tx_to_decode.sender = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
         tx_to_decode.receiver = Address.new_from_bech32(
-            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+            "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         )
-        tx_to_decode.data = "DCDTNFTTransfer@4d4e592d336131636566@01@01@8049d639e5a6980d1cd2392abcce41029cda74a1563523a202f09641cc2618f8@aaaaaaaaaaaaaaaaaaaaaa@aa".encode()
+        tx_to_decode.data = "DCDTNFTTransfer@4d4e592d336131636566@01@01@3ddf173c9e02c0e58fb1e552f473d98da6a4c3f23c7e034c912ee98a8dddce17@aaaaaaaaaaaaaaaaaaaaaa@aa".encode()
 
         transaction_decoder = TransactionDecoder()
         metadata = transaction_decoder.get_transaction_metadata(tx_to_decode)
@@ -256,11 +256,11 @@ class TestTransactionDecoder:
     def test_multi_dcdtnft_transfer_separated_messages(self):
         tx_to_decode = get_empty_transaction_on_network()
 
-        tx_to_decode.sender = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        tx_to_decode.sender = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
         tx_to_decode.receiver = Address.new_from_bech32(
-            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+            "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         )
-        tx_to_decode.data = "MultiDCDTNFTTransfer@8049d639e5a6980d1cd2392abcce41029cda74a1563523a202f09641cc2618f8@01@4d4e592d336131636566@02@01@aaaaaaaa@aa".encode()
+        tx_to_decode.data = "MultiDCDTNFTTransfer@3ddf173c9e02c0e58fb1e552f473d98da6a4c3f23c7e034c912ee98a8dddce17@01@4d4e592d336131636566@02@01@aaaaaaaa@aa".encode()
 
         transaction_decoder = TransactionDecoder()
         metadata = transaction_decoder.get_transaction_metadata(tx_to_decode)

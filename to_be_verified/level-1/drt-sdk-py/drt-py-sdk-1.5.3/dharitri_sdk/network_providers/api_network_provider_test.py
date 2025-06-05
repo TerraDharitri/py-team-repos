@@ -448,7 +448,7 @@ class TestApi:
         assert headers.get("User-Agent") == "dharitri-sdk-py/api/test-client"
 
     def test_get_transactions(self):
-        address = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        address = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
         transactions = self.api.get_transactions(address)
         assert len(transactions) == 25
 

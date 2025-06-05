@@ -24,7 +24,7 @@ class TestDelegationTransactionsOutcomeParser:
             "Q8M8GTdWSAAA",
             "AQ==",
             "Q8M8GTdWSAAA",
-            "AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABD///8=",
+            "IzMAAAAAAAAAAAAAAAAAAAACMzAAAAAAAAAAAAP///8=",
         ]
 
         delegate_event = TransactionEvent(
@@ -37,7 +37,7 @@ class TestDelegationTransactionsOutcomeParser:
         )
 
         encodedTopics = [
-            "AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABD///8=",
+            "IzMAAAAAAAAAAAAAAAAAAAACMzAAAAAAAAAAAAP///8=",
             "PDXX6ssamaSgzKpTfvDMCuEJ9B9sK0AiA+Yzv7sHH1w=",
         ]
 
@@ -72,7 +72,7 @@ class TestDelegationTransactionsOutcomeParser:
             sender=Address.new_from_bech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv"),
             receiver=Address.new_from_bech32("drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5"),
             data=base64.b64decode(
-                "QDZmNmJAMDAwMDAwMDAwMDAwMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMGZmZmZmZg=="
+                "QDZmNmJAMjMzMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMzMzMDAwMDAwMDAwMDAwMDAwMDAxMGZmZmZmZg=="
             ),
             logs=sc_result_log,
         )
@@ -90,7 +90,7 @@ class TestDelegationTransactionsOutcomeParser:
         encodedTopics = [
             "AvYUMPsrWw==",
             "ZmFsc2U=",
-            "AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABD///8=",
+            "IzMAAAAAAAAAAAAAAAAAAAACMzAAAAAAAAAAAAP///8=",
         ]
 
         claim_rewards_event = TransactionEvent(

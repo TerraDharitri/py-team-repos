@@ -27,29 +27,29 @@ def test_user_secret_key_create():
 
 
 def test_user_secret_key_generate_public_key():
-    assert UserSecretKey.from_string("413f42575f7f26fad3317a778771212fdb80245850981e48b58a4f25e344e8f9").generate_public_key().hex() == "0139472eff6886771a982f3083da5d421f24c29181e63888228dc81ca60d69e1"
+    assert UserSecretKey.from_string("7b4686f3c925f9f6571de5fa24fb6a7ac0a2e5439a48bad8ed90b6690aad6017").generate_public_key().hex() == "c782420144e8296f757328b409d01633bf8d09d8ab11ee70d32c204f6589bd24"
     assert UserSecretKey.from_string("b8ca6f8203fb4b545a8e83c5384da033c415db155b53fb5b8eba7ff5a039d639").generate_public_key().hex() == "8049d639e5a6980d1cd2392abcce41029cda74a1563523a202f09641cc2618f8"
     assert UserSecretKey.from_string("e253a571ca153dc2aee845819f74bcc9773b0586edead15a94cb7235a5027436").generate_public_key().hex() == "b2a11555ce521e4944e09ab17549d85b487dcd26c84b5017a39e31a3670889ba"
 
 
 def test_user_signer_from_pem_file():
     pubkey = UserSigner.from_pem_file(testwallets / "alice.pem", 0).get_pubkey()
-    assert Address(pubkey.buffer, "drt").to_bech32() == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+    assert Address(pubkey.buffer, "drt").to_bech32() == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
 
     pubkey = UserSigner.from_pem_file(testwallets / "bob.pem", 0).get_pubkey()
-    assert Address(pubkey.buffer, "drt").to_bech32() == "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"
+    assert Address(pubkey.buffer, "drt").to_bech32() == "drt18h03w0y7qtqwtra3u4f0gu7e3kn2fslj83lqxny39m5c4rwaectswerhd2"
 
     pubkey = UserSigner.from_pem_file(testwallets / "carol.pem", 0).get_pubkey()
-    assert Address(pubkey.buffer, "drt").to_bech32() == "drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e"
+    assert Address(pubkey.buffer, "drt").to_bech32() == "drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q"
 
 
 def test_load_signers_from_pem():
     signers = UserSigner.from_pem_file_all(testwallets / "multipleUserKeys.pem")
 
     assert len(signers) == 3
-    assert Address(signers[0].get_pubkey().buffer, "drt").to_bech32() == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
-    assert Address(signers[1].get_pubkey().buffer, "drt").to_bech32() == "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"
-    assert Address(signers[2].get_pubkey().buffer, "drt").to_bech32() == "drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e"
+    assert Address(signers[0].get_pubkey().buffer, "drt").to_bech32() == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
+    assert Address(signers[1].get_pubkey().buffer, "drt").to_bech32() == "drt18h03w0y7qtqwtra3u4f0gu7e3kn2fslj83lqxny39m5c4rwaectswerhd2"
+    assert Address(signers[2].get_pubkey().buffer, "drt").to_bech32() == "drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q"
 
 
 def test_user_wallet_to_keyfile_object_using_known_test_wallets_with_their_randomness():
@@ -119,8 +119,8 @@ def test_sign_transaction():
     tx = Transaction(
         nonce=89,
         value=0,
-        receiver="drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c",
-        sender="drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
+        receiver="drt18h03w0y7qtqwtra3u4f0gu7e3kn2fslj83lqxny39m5c4rwaectswerhd2",
+        sender="drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l",
         data=None,
         gas_price=1000000000,
         gas_limit=50000,
@@ -130,23 +130,23 @@ def test_sign_transaction():
     )
 
     signer = UserSigner.from_pem_file(testwallets / "alice.pem")
-    verifier = UserVerifier.from_address(Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"))
+    verifier = UserVerifier.from_address(Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"))
     transaction_computer = TransactionComputer()
 
     tx.signature = signer.sign(transaction_computer.compute_bytes_for_signing(tx))
-    assert tx.signature.hex() == "b56769014f2bdc5cf9fc4a05356807d71fcf8775c819b0f1b0964625b679c918ffa64862313bfef86f99b38cb84fcdb16fa33ad6eb565276616723405cd8f109"
+    assert tx.signature.hex() == "9bd579f3aabb32551b83880a60745a5ab65af4ce8d1061b1ea7dbf00b1352bca2da0d60daba622cb8298ac24167c1530d9bf850b901dd039d6abe0ff1455980c"
     assert verifier.verify(transaction_computer.compute_bytes_for_signing(tx), tx.signature)
 
 
 def test_sign_message():
-    message = Message("hello".encode(), address=Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"))
+    message = Message("hello".encode(), address=Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"))
     message_computer = MessageComputer()
 
     signer = UserSigner.from_pem_file(testwallets / "alice.pem")
-    verifier = UserVerifier.from_address(Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"))
+    verifier = UserVerifier.from_address(Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"))
 
     message.signature = signer.sign(message_computer.compute_bytes_for_signing(message))
-    assert message.signature.hex() == "561bc58f1dc6b10de208b2d2c22c9a474ea5e8cabb59c3d3ce06bbda21cc46454aa71a85d5a60442bd7784effa2e062fcb8fb421c521f898abf7f5ec165e5d0f"
+    assert message.signature.hex() == "fe1d7c955128a6a97e0a1c05e972d2dd457b3371a3ec4274ca911c7bd34ce0e3263ef8370aa36190f7545201a173c3f1ec38ece249c806de3887cbd075198806"
     assert verifier.verify(message_computer.compute_bytes_for_signing(message), message.signature)
 
 
@@ -167,7 +167,7 @@ def test_load_secret_key_but_without_kind_field():
     keystore_path = testwallets / "withoutKind.json"
     secret_key = UserWallet.load_secret_key(keystore_path, "password")
     actual_address = (secret_key.generate_public_key().to_address("drt")).to_bech32()
-    assert actual_address == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+    assert actual_address == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
 
 
 def test_load_secret_key_with_unecessary_address_index():

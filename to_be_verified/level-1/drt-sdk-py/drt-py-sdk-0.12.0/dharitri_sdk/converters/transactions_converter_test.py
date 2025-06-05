@@ -27,8 +27,8 @@ def test_transaction_converter():
     transaction = Transaction(
         nonce=90,
         value=123456789000000000000000000000,
-        sender="drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
-        receiver="drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c",
+        sender="drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l",
+        receiver="drt18h03w0y7qtqwtra3u4f0gu7e3kn2fslj83lqxny39m5c4rwaectswerhd2",
         sender_username="alice",
         receiver_username="bob",
         gas_price=1000000000,
@@ -49,20 +49,20 @@ def test_transaction_from_dictionary_with_inner_transaction():
     inner_transaction = Transaction(
         nonce=90,
         value=123456789000000000000000000000,
-        sender="drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
-        receiver="drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c",
+        sender="drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l",
+        receiver="drt18h03w0y7qtqwtra3u4f0gu7e3kn2fslj83lqxny39m5c4rwaectswerhd2",
         sender_username="alice",
         receiver_username="bob",
         gas_limit=80000,
         data=b"hello",
         chain_id="localnet",
-        relayer="drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e"
+        relayer="drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q"
     )
 
     relayed_transaction = Transaction(
         nonce=77,
-        sender="drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e",
-        receiver="drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e",
+        sender="drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q",
+        receiver="drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q",
         gas_limit=180000,
         chain_id="localnet",
         inner_transactions=[inner_transaction]
@@ -86,7 +86,7 @@ def test_convert_tx_on_network_to_outcome():
     event.data_payload = TxEventDataOnNetwork(b"foo")
 
     logs = TxLogsOnNetwork()
-    logs.address = Address.new_from_bech32("drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e")
+    logs.address = Address.new_from_bech32("drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q")
     logs.events = [event]
 
     tx_on_network.logs = logs
@@ -100,7 +100,7 @@ def test_convert_tx_on_network_to_outcome():
     event.data_payload = TxEventDataOnNetwork(base64.b64decode("QDZmNmI="))
 
     logs = TxLogsOnNetwork()
-    logs.address = Address.new_from_bech32("drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e")
+    logs.address = Address.new_from_bech32("drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q")
     logs.events = [event]
 
     contract_result_item = ContractResultItemOnNetwork()
@@ -119,7 +119,7 @@ def test_convert_tx_on_network_to_outcome():
             receiver="",
             data=b"@6f6b@2a",
             logs=TransactionLogs(
-                address="drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e",
+                address="drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q",
                 events=[TransactionEvent(
                     address="",
                     identifier="writeLog",
@@ -129,7 +129,7 @@ def test_convert_tx_on_network_to_outcome():
             )
         )],
         transaction_logs=TransactionLogs(
-            address="drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e",
+            address="drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q",
             events=[
                 TransactionEvent(
                     address="",

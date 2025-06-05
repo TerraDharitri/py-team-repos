@@ -31,7 +31,7 @@ class TestEntrypoint:
 
         assert (
             transaction.signature.hex()
-            == "69bc7d1777edd0a901e6cf94830475716205c5efdf2fd44d4be31badead59fc8418b34f0aa3b2c80ba14aed5edd30031757d826af58a1abb690a0bee89ba9309"
+            == "d1e79c8259417250626ad30322255fcae78df51c92e7582eb47b75d2cc17065258577232b5c37754c7dc8b5f855ef58c157c390e3ba3ad5b874bae6f177c0507"
         )
         assert transaction.version == 2
         assert transaction.options == 0
@@ -118,7 +118,7 @@ class TestEntrypoint:
     @pytest.mark.skip("Requires Ledger Device.")
     def test_create_and_send_transaction_using_ledger_account(self):
         factory = self.entrypoint.create_transfers_transactions_factory()
-        alice = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        alice = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
 
         for i in range(2):
             account = LedgerAccount(i)

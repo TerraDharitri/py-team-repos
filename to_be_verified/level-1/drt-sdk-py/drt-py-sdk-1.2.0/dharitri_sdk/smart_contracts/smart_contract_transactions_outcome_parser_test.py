@@ -26,7 +26,7 @@ class TestSmartContractTransactionsOutcomeParser:
 
     def test_parse_minimalistic_deploy_outcome(self):
         contract = Address.new_from_bech32("drt1qqqqqqqqqqqqqpgqqacl85rd0gl2q8wggl8pwcyzcr4fflc5d8ss39zhmv")
-        deployer = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        deployer = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
         code_hash = b"abba"
 
         event = TransactionEvent(
@@ -49,7 +49,7 @@ class TestSmartContractTransactionsOutcomeParser:
 
     def test_parse_deploy_outcome(self):
         contract = Address.new_from_bech32("drt1qqqqqqqqqqqqqpgqqacl85rd0gl2q8wggl8pwcyzcr4fflc5d8ss39zhmv")
-        deployer = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        deployer = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
         code_hash = bytes.fromhex("abba")
 
         event = TransactionEvent(
@@ -85,7 +85,7 @@ class TestSmartContractTransactionsOutcomeParser:
         assert parsed.contracts[0].code_hash == code_hash
 
     def test_parse_deploy_outcome_with_error(self):
-        deployer = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        deployer = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
 
         event = TransactionEvent(
             raw={},
@@ -157,7 +157,7 @@ class TestSmartContractTransactionsOutcomeParser:
         )
         assert (
             parsed.contracts[0].owner_address.to_bech32()
-            == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+            == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         )
 
     @pytest.mark.networkInteraction

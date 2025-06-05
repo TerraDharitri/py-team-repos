@@ -39,7 +39,7 @@ class TestSmartContractQueriesController:
             arguments=[BigUIntValue(1)],
         )
 
-        assert transaction.sender.to_bech32() == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+        assert transaction.sender.to_bech32() == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         assert transaction.receiver.to_bech32() == Address.new_from_hex(CONTRACT_DEPLOY_ADDRESS_HEX).to_bech32()
         assert transaction.data == f"{self.bytecode.hex()}@0500@0504@01".encode()
         assert transaction.gas_limit == gas_limit
@@ -60,7 +60,7 @@ class TestSmartContractQueriesController:
             arguments=[U32Value(7)],
         )
 
-        assert transaction.sender.to_bech32() == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+        assert transaction.sender.to_bech32() == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         assert transaction.receiver.to_bech32() == "drt1qqqqqqqqqqqqqpgqhy6nl6zq07rnzry8uyh6rtyq0uzgtk3e69fq4h4xut"
         assert transaction.gas_limit == gas_limit
         assert transaction.data.decode() == "add@07"
@@ -80,7 +80,7 @@ class TestSmartContractQueriesController:
             arguments=[BigUIntValue(0)],
         )
 
-        assert transaction.sender.to_bech32() == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+        assert transaction.sender.to_bech32() == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
         assert transaction.receiver.to_bech32() == "drt1qqqqqqqqqqqqqpgqhy6nl6zq07rnzry8uyh6rtyq0uzgtk3e69fq4h4xut"
         assert transaction.data == f"upgradeContract@{self.bytecode.hex()}@0504@".encode()
         assert transaction.gas_limit == gas_limit

@@ -12,14 +12,14 @@ class TestDelegationTransactionsOutcomeParser:
     parser = DelegationTransactionsOutcomeParser()
 
     def test_parse_create_new_delegation_contract(self):
-        contract_address = Address.new_from_bech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqy8llllssrzx6z")
+        contract_address = Address.new_from_bech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqlllllsuqfmuj")
 
         encodedTopics = [
             "Q8M8GTdWSAAA",
             "Q8M8GTdWSAAA",
             "AQ==",
             "Q8M8GTdWSAAA",
-            "AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABD///8=",
+            "IzMAAAAAAAAAAAAAAAAAAAACMzAAAAAAAAAAAAP///8=",
         ]
 
         delegate_event = TransactionEvent(
@@ -29,12 +29,12 @@ class TestDelegationTransactionsOutcomeParser:
         )
 
         encodedTopics = [
-            "AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABD///8=",
+            "IzMAAAAAAAAAAAAAAAAAAAACMzAAAAAAAAAAAAP///8=",
             "PDXX6ssamaSgzKpTfvDMCuEJ9B9sK0AiA+Yzv7sHH1w=",
         ]
 
         sc_deploy_event = TransactionEvent(
-            address="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqy8llllssrzx6z",
+            address="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqlllllsuqfmuj",
             identifier="SCDeploy",
             topics=base64_topics_to_bytes(encodedTopics)
         )
@@ -56,7 +56,7 @@ class TestDelegationTransactionsOutcomeParser:
         sc_result = SmartContractResult(
             sender="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
             receiver="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
-            data=base64.b64decode("QDZmNmJAMDAwMDAwMDAwMDAwMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMGZmZmZmZg=="),
+            data=base64.b64decode("QDZmNmJAMjMzMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMzMzMDAwMDAwMDAwMDAwMDAwMDAxMGZmZmZmZg=="),
             logs=sc_result_log
         )
 

@@ -56,7 +56,7 @@ def test_verify_message_signature():
     ok = facade.verify_message_signature(
         public_key=bytes.fromhex("e7beaa95b3877f47348df4dd1cb578a4f7cabf7a20bfeefe5cdd263878ff132b765e04fef6f40c93512b666c47ed7719b8902f6c922c04247989b7137e837cc81a62e54712471c97a2ddab75aa9c2f58f813ed4c0fa722bde0ab718bff382208"),
         message=b"helloWorld",
-        signature=bytes.fromhex("84fd0a3a9d4f1ea2d4b40c6da67f9b786284a1c3895b7253fec7311597cda3f757862bb0690a92a13ce612c33889fd86")
+        signature=bytes.fromhex("9cad4c00c38578ac11024d679d400a3d7fa75e272afe267bf912190d17b0c3200d2e55ddc8cab75ce14d0c88eacc0216")
     )
 
     assert ok == False
@@ -65,7 +65,7 @@ def test_verify_message_signature():
     ok = facade.verify_message_signature(
         public_key=bytes.fromhex("badbad95b3877f47348df4dd1cb578a4f7cabf7a20bfeefe5cdd263878ff132b765e04fef6f40c93512b666c47ed7719b8902f6c922c04247989b7137e837cc81a62e54712471c97a2ddab75aa9c2f58f813ed4c0fa722bde0ab718bff382208"),
         message=b"hello",
-        signature=bytes.fromhex("84fd0a3a9d4f1ea2d4b40c6da67f9b786284a1c3895b7253fec7311597cda3f757862bb0690a92a13ce612c33889fd86")
+        signature=bytes.fromhex("9cad4c00c38578ac11024d679d400a3d7fa75e272afe267bf912190d17b0c3200d2e55ddc8cab75ce14d0c88eacc0216")
     )
 
     assert ok == False

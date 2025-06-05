@@ -30,7 +30,7 @@ class TestSmartContractTransactionsOutcomeParser:
 
     def test_parse_minimalistic_deploy_outcome(self):
         contract = Address.new_from_bech32("drt1qqqqqqqqqqqqqpgqqacl85rd0gl2q8wggl8pwcyzcr4fflc5d8ss39zhmv")
-        deployer = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        deployer = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
         code_hash = b"abba"
 
         event = TransactionEvent(
@@ -56,7 +56,7 @@ class TestSmartContractTransactionsOutcomeParser:
 
     def test_parse_deploy_outcome(self):
         contract = Address.new_from_bech32("drt1qqqqqqqqqqqqqpgqqacl85rd0gl2q8wggl8pwcyzcr4fflc5d8ss39zhmv")
-        deployer = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        deployer = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
         code_hash = bytes.fromhex("abba")
 
         transaction_converter = TransactionsConverter()
@@ -94,7 +94,7 @@ class TestSmartContractTransactionsOutcomeParser:
         assert parsed.contracts[0].code_hash == code_hash
 
     def test_parse_deploy_outcome_with_error(self):
-        deployer = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        deployer = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
         transaction_converter = TransactionsConverter()
 
         event = TxEventOnNetwork()
@@ -132,7 +132,7 @@ class TestSmartContractTransactionsOutcomeParser:
 
         parsed = self.parser.parse_deploy(tx_outcome)
         assert parsed.contracts[0].address == "drt1qqqqqqqqqqqqqpgq29deu3uhcvuk7jhxd5cxrvh23xulkcewd8sse4xy6x"
-        assert parsed.contracts[0].owner_address == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+        assert parsed.contracts[0].owner_address == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
 
     @pytest.mark.networkInteraction
     def test_parse_failed_deploy(self):

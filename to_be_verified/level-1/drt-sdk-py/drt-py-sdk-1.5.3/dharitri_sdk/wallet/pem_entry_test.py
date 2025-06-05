@@ -11,22 +11,22 @@ def test_from_text_all():
     entries = PemEntry.from_text_all(text)
     entry = entries[0]
     assert len(entries) == 1
-    assert entry.label == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+    assert entry.label == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
     assert entry.message[0:USER_SEED_LENGTH].hex() == "413f42575f7f26fad3317a778771212fdb80245850981e48b58a4f25e344e8f9"
 
     text = (testwallets / "multipleUserKeys.pem").read_text()
     entries = PemEntry.from_text_all(text)
     entry = entries[0]
     assert len(entries) == 3
-    assert entry.label == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+    assert entry.label == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
     assert entry.message[0:USER_SEED_LENGTH].hex() == "413f42575f7f26fad3317a778771212fdb80245850981e48b58a4f25e344e8f9"
 
     entry = entries[1]
-    assert entry.label == "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"
+    assert entry.label == "drt18h03w0y7qtqwtra3u4f0gu7e3kn2fslj83lqxny39m5c4rwaectswerhd2"
     assert entry.message[0:USER_SEED_LENGTH].hex() == "b8ca6f8203fb4b545a8e83c5384da033c415db155b53fb5b8eba7ff5a039d639"
 
     entry = entries[2]
-    assert entry.label == "drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e"
+    assert entry.label == "drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q"
     assert entry.message[0:USER_SEED_LENGTH].hex() == "e253a571ca153dc2aee845819f74bcc9773b0586edead15a94cb7235a5027436"
 
 

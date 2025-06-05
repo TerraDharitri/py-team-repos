@@ -9,8 +9,8 @@ from dharitri_sdk.core.transaction_parsers.transaction_on_network_wrapper import
 from dharitri_sdk.core.transactions_factories.transactions_factory_config import \
     TransactionsFactoryConfig
 
-frank = Address.new_from_bech32("drt1kdl46yctawygtwg2k462307dmz2v55c605737dp3zkxh04sct7asacg58j")
-grace = Address.new_from_bech32("drt1r69gk66fmedhhcg24g2c5kn2f2a5k4kvpr6jfw67dn2lyydd8cfsncd6w8")
+frank = Address.new_from_bech32("drt10xpcr2cqud9vm6q4axfv64ek63k7xywfcy8zyjp7pvx3kr4cnqlqv3scy7")
+grace = Address.new_from_bech32("drt1kgxjlszkqcvccecuvl5r64c7cju7jqwp5kh22w4e6crf827peljqcvleft")
 parser = TokenOperationsOutcomeParser(TransactionsFactoryConfig("D"))
 
 

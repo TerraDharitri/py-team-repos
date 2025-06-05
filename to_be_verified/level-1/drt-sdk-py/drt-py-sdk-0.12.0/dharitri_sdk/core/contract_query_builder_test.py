@@ -4,7 +4,7 @@ from dharitri_sdk.core.contract_query_builder import ContractQueryBuilder
 
 def test_contract_query_builder():
     contract = Address.new_from_bech32("drt1qqqqqqqqqqqqqpgquzmh78klkqwt0p4rjys0qtp3la07gz4d396qwgcss9")
-    caller = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+    caller = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
 
     builder = ContractQueryBuilder(
         contract=contract,

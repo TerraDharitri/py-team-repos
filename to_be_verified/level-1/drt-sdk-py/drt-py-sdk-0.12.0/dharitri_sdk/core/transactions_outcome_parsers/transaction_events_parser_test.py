@@ -93,7 +93,7 @@ def test_parse_multisig_start_perform_action():
         transaction_logs=TransactionLogs(events=[TransactionEvent(
             identifier="performAction",
             topics=[bytes.fromhex("7374617274506572666f726d416374696f6e")],
-            data_items=[bytes.fromhex("00000001000000000500000000000000000500d006f73c4221216fa679bc559005584c4f1160e569e1000000000000000003616464000000010000000107000000010139472eff6886771a982f3083da5d421f24c29181e63888228dc81ca60d69e1")]
+            data_items=[bytes.fromhex("00000001000000000500000000000000000500d006f73c4221216fa679bc559005584c4f1160e569e100000000000000000361646400000001000000010700000001c782420144e8296f757328b409d01633bf8d09d8ab11ee70d32c204f6589bd24")]
         )])
     )
 
@@ -116,7 +116,7 @@ def test_parse_multisig_start_perform_action():
                 '__discriminant__': 5
             }
         ),
-        signers=[Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf").get_public_key()]
+        signers=[Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l").get_public_key()]
     )
 
 
@@ -241,7 +241,7 @@ def test_multisig_start_perform_action():
             **{
                 "0": SimpleNamespace(
                     **{
-                        'to': Address.new_from_bech32("drt1r69gk66fmedhhcg24g2c5kn2f2a5k4kvpr6jfw67dn2lyydd8cfsncd6w8").get_public_key(),
+                        'to': Address.new_from_bech32("drt1kgxjlszkqcvccecuvl5r64c7cju7jqwp5kh22w4e6crf827peljqcvleft").get_public_key(),
                         'rewa_amount': 1000000000000000000,
                         'opt_gas_limit': None,
                         'endpoint_name': b'',
@@ -251,6 +251,6 @@ def test_multisig_start_perform_action():
                 '__discriminant__': 5
             },
         ),
-        signers=[Address.new_from_bech32("drt1kdl46yctawygtwg2k462307dmz2v55c605737dp3zkxh04sct7asacg58j").get_public_key(),
-                 Address.new_from_bech32("drt1r69gk66fmedhhcg24g2c5kn2f2a5k4kvpr6jfw67dn2lyydd8cfsncd6w8").get_public_key()]
+        signers=[Address.new_from_bech32("drt10xpcr2cqud9vm6q4axfv64ek63k7xywfcy8zyjp7pvx3kr4cnqlqv3scy7").get_public_key(),
+                 Address.new_from_bech32("drt1kgxjlszkqcvccecuvl5r64c7cju7jqwp5kh22w4e6crf827peljqcvleft").get_public_key()]
     )

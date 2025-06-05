@@ -25,7 +25,7 @@ class TestAccountAwaiter:
     )
 
     def test_await_on_balance_increase(self):
-        alice = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+        alice = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
         # alice account is created with 1000 REWA
         initial_balance = self.provider.get_account(alice).balance
 
@@ -50,7 +50,7 @@ class TestAccountAwaiter:
     def test_await_for_account_balance_increase_on_network(self):
         alice = load_wallets()["alice"]
         alice_address = Address.new_from_bech32(alice.label)
-        frank = Address.new_from_bech32("drt1kdl46yctawygtwg2k462307dmz2v55c605737dp3zkxh04sct7asacg58j")
+        frank = Address.new_from_bech32("drt10xpcr2cqud9vm6q4axfv64ek63k7xywfcy8zyjp7pvx3kr4cnqlqv3scy7")
 
         api = ApiNetworkProvider("https://devnet-api.dharitri.org")
         watcher = AccountAwaiter(fetcher=api)

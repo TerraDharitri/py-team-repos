@@ -9,7 +9,7 @@ dummyConfig = DefaultTransactionBuildersConfiguration(chain_id="D")
 
 
 def test_dcdt_issue_builder():
-    issuer = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+    issuer = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
 
     builder = DCDTIssueBuilder(
         config=dummyConfig,

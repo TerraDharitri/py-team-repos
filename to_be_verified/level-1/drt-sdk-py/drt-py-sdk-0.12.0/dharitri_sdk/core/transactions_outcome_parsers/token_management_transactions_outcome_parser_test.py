@@ -38,7 +38,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             identifier_base64,
             "U0VDT05E",
             "Wlpa",
-            "RnVuZ2libGVFU0RU",
+            "RnVuZ2libGVEQ0RU",
             "Ag=="
         ]
 
@@ -77,7 +77,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             "TkZULWYwMWQxZQ==",
             "",
             "",
-            "RVNEVFJvbGVCdXJuRm9yQWxs"
+            "RENEVFJvbGVCdXJuRm9yQWxs"
         ]
         second_event = TransactionEvent(
             address="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
@@ -89,7 +89,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             identifier_base64,
             "TkZURVNU",
             "TkZU",
-            "Tm9uRnVuZ2libGVFU0RU"
+            "Tm9uRnVuZ2libGVEQ0RU"
         ]
         third_event = TransactionEvent(
             address="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
@@ -112,7 +112,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             identifier_base64,
             "U0VNSQ==",
             "U0VNSUZORw==",
-            "U2VtaUZ1bmdpYmxlRVNEVA=="
+            "U2VtaUZ1bmdpYmxlRENEVA=="
         ]
         event = TransactionEvent(
             address="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
@@ -135,7 +135,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             identifier_base64,
             "TUVURVNU",
             "TUVUQVRFU1Q=",
-            "TWV0YUVTRFQ="
+            "TWV0YURDRFQ="
         ]
         event = TransactionEvent(
             address="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
@@ -162,7 +162,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             first_identifier_base64,
             "TE1BTw==",
             "TE1BTw==",
-            "RnVuZ2libGVFU0RU",
+            "RnVuZ2libGVEQ0RU",
             "Ag=="
         ]
         first_event = TransactionEvent(
@@ -171,7 +171,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             topics=base64_topics_to_bytes(encoded_topics)
         )
 
-        encoded_topics = [second_identifier_base64, "TE1BTw==", "TE1BTw==", "RnVuZ2libGVFU0RU", "Ag=="]
+        encoded_topics = [second_identifier_base64, "TE1BTw==", "TE1BTw==", "RnVuZ2libGVEQ0RU", "Ag=="]
         second_event = TransactionEvent(
             address="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
             identifier="registerAndSetAllRoles",
@@ -184,8 +184,8 @@ class TestTokenManagementTransactionsOutcomeParser:
             "TE1BTy1kOWY4OTI=",
             "",
             "",
-            "RVNEVFJvbGVMb2NhbE1pbnQ=",
-            "RVNEVFJvbGVMb2NhbEJ1cm4="
+            "RENEVFJvbGVMb2NhbE1pbnQ=",
+            "RENEVFJvbGVMb2NhbEJ1cm4="
         ]
         first_result_event = TransactionEvent(
             address="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
@@ -197,8 +197,8 @@ class TestTokenManagementTransactionsOutcomeParser:
             "VFNULTEyMzQ1Ng==",
             "",
             "",
-            "RVNEVFJvbGVMb2NhbE1pbnQ=",
-            "RVNEVFJvbGVMb2NhbEJ1cm4="
+            "RENEVFJvbGVMb2NhbE1pbnQ=",
+            "RENEVFJvbGVMb2NhbEJ1cm4="
         ]
         second_result_event = TransactionEvent(
             address="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
@@ -210,7 +210,7 @@ class TestTokenManagementTransactionsOutcomeParser:
         sc_result = SmartContractResult(
             sender="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2",
             receiver="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
-            data="RVNEVFNldFJvbGVANGM0ZDQxNGYyZDY0Mzk2NjM4MzkzMkA0NTUzNDQ1NDUyNmY2YzY1NGM2ZjYzNjE2YzRkNjk2ZTc0QDQ1NTM0NDU0NTI2ZjZjNjU0YzZmNjM2MTZjNDI3NTcyNmU=".encode(),
+            data="RENEVFNldFJvbGVANGM0ZDQxNGYyZDY0Mzk2NjM4MzkzMkA0NDQzNDQ1NDUyNmY2YzY1NGM2ZjYzNjE2YzRkNjk2ZTc0QDQ0NDM0NDU0NTI2ZjZjNjU0YzZmNjM2MTZjNDI3NTcyNmU=".encode(),
             logs=result_logs
         )
 
@@ -232,9 +232,9 @@ class TestTokenManagementTransactionsOutcomeParser:
             identifier_base64,
             "",
             "",
-            "RVNEVFJvbGVORlRDcmVhdGU=",
-            "RVNEVFJvbGVORlRBZGRRdWFudGl0eQ==",
-            "RVNEVFJvbGVORlRCdXJu"
+            "RENEVFJvbGVORlRDcmVhdGU=",
+            "RENEVFJvbGVORlRBZGRRdWFudGl0eQ==",
+            "RENEVFJvbGVORlRCdXJu"
         ]
         event = TransactionEvent(
             address="drt18s6a06ktr2v6fgxv4ffhauxvptssnaqlds45qgsrucemlwc8rawqfgxqg5",
@@ -371,24 +371,24 @@ class TestTokenManagementTransactionsOutcomeParser:
         identifier_base64 = base64.b64encode(identifier.encode()).decode()
         nonce = 0
         balance = 10000000
-        address = "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+        address = "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
 
         encoded_topics = [
             identifier_base64,
             "",
             "mJaA",
-            "ATlHLv9ohncamC8wg9pdQh8kwpGB5jiIIo3IHKYNaeE="
+            "x4JCAUToKW91cyi0CdAWM7+NCdirEe5w0ywgT2WJvSQ="
         ]
         event = TransactionEvent(
             address="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2",
             identifier="DCDTFreeze",
             topics=base64_topics_to_bytes(encoded_topics)
         )
-        tx_log = TransactionLogs("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf", [event])
+        tx_log = TransactionLogs("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l", [event])
         sc_result = SmartContractResult(
             sender="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2",
-            receiver="drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
-            data="RVNEVEZyZWV6ZUA0MTQxNDEyZDMyMzk2MzM0NjMzOQ==".encode(),
+            receiver="drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l",
+            data="RENEVEZyZWV6ZUA0MTQxNDEyZDMyMzk2MzM0NjMzOQ==".encode(),
             logs=tx_log
         )
         tx_results_and_logs = TransactionOutcome(transaction_results=[sc_result])
@@ -405,24 +405,24 @@ class TestTokenManagementTransactionsOutcomeParser:
         identifier_base64 = base64.b64encode(identifier.encode()).decode()
         nonce = 0
         balance = 10000000
-        address = "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+        address = "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
 
         encoded_topics = [
             identifier_base64,
             "",
             "mJaA",
-            "ATlHLv9ohncamC8wg9pdQh8kwpGB5jiIIo3IHKYNaeE="
+            "x4JCAUToKW91cyi0CdAWM7+NCdirEe5w0ywgT2WJvSQ="
         ]
         event = TransactionEvent(
             address="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2",
             identifier="DCDTUnFreeze",
             topics=base64_topics_to_bytes(encoded_topics)
         )
-        tx_log = TransactionLogs("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf", [event])
+        tx_log = TransactionLogs("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l", [event])
         sc_result = SmartContractResult(
             sender="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2",
-            receiver="drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
-            data="RVNEVEZyZWV6ZUA0MTQxNDEyZDMyMzk2MzM0NjMzOQ==".encode(),
+            receiver="drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l",
+            data="RENEVEZyZWV6ZUA0MTQxNDEyZDMyMzk2MzM0NjMzOQ==".encode(),
             logs=tx_log
         )
         tx_results_and_logs = TransactionOutcome(transaction_results=[sc_result])
@@ -439,24 +439,24 @@ class TestTokenManagementTransactionsOutcomeParser:
         identifier_base64 = base64.b64encode(identifier.encode()).decode()
         nonce = 0
         balance = 10000000
-        address = "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
+        address = "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
 
         encoded_topics = [
             identifier_base64,
             "",
             "mJaA",
-            "ATlHLv9ohncamC8wg9pdQh8kwpGB5jiIIo3IHKYNaeE="
+            "x4JCAUToKW91cyi0CdAWM7+NCdirEe5w0ywgT2WJvSQ="
         ]
         event = TransactionEvent(
             address="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2",
             identifier="DCDTWipe",
             topics=base64_topics_to_bytes(encoded_topics)
         )
-        tx_log = TransactionLogs("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf", [event])
+        tx_log = TransactionLogs("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l", [event])
         sc_result = SmartContractResult(
             sender="drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2",
-            receiver="drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
-            data="RVNEVEZyZWV6ZUA0MTQxNDEyZDMyMzk2MzM0NjMzOQ==".encode(),
+            receiver="drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l",
+            data="RENEVEZyZWV6ZUA0MTQxNDEyZDMyMzk2MzM0NjMzOQ==".encode(),
             logs=tx_log
         )
         tx_results_and_logs = TransactionOutcome(transaction_results=[sc_result])
@@ -486,7 +486,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             identifier="DCDTNFTUpdateAttributes",
             topics=base64_topics_to_bytes(encoded_topics)
         )
-        tx_log = TransactionLogs("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf", [event])
+        tx_log = TransactionLogs("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l", [event])
         tx_result = SmartContractResult()
         tx_results_and_logs = TransactionOutcome(transaction_results=[tx_result], transaction_logs=tx_log)
 
@@ -512,7 +512,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             identifier="DCDTNFTAddQuantity",
             topics=base64_topics_to_bytes(encoded_topics)
         )
-        tx_log = TransactionLogs("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf", [event])
+        tx_log = TransactionLogs("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l", [event])
         tx_result = SmartContractResult()
         tx_results_and_logs = TransactionOutcome(transaction_results=[tx_result], transaction_logs=tx_log)
 
@@ -538,7 +538,7 @@ class TestTokenManagementTransactionsOutcomeParser:
             identifier="DCDTNFTBurn",
             topics=base64_topics_to_bytes(encoded_topics)
         )
-        tx_log = TransactionLogs("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf", [event])
+        tx_log = TransactionLogs("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l", [event])
         tx_result = SmartContractResult()
         tx_results_and_logs = TransactionOutcome(transaction_results=[tx_result], transaction_logs=tx_log)
 

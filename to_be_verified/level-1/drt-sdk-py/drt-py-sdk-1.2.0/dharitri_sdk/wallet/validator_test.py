@@ -24,7 +24,7 @@ def test_sign_message():
     signature = signer.sign(message)
     assert (
         signature.hex()
-        == "84fd0a3a9d4f1ea2d4b40c6da67f9b786284a1c3895b7253fec7311597cda3f757862bb0690a92a13ce612c33889fd86"
+        == "9cad4c00c38578ac11024d679d400a3d7fa75e272afe267bf912190d17b0c3200d2e55ddc8cab75ce14d0c88eacc0216"
     )
 
 
@@ -35,7 +35,7 @@ def test_verify_message():
 
     message = b"hello"
     signature = bytes.fromhex(
-        "84fd0a3a9d4f1ea2d4b40c6da67f9b786284a1c3895b7253fec7311597cda3f757862bb0690a92a13ce612c33889fd86"
+        "9cad4c00c38578ac11024d679d400a3d7fa75e272afe267bf912190d17b0c3200d2e55ddc8cab75ce14d0c88eacc0216"
     )
 
     assert verifier.verify(message, signature)

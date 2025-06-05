@@ -35,8 +35,8 @@ def test_sign_and_verify_transaction():
     tx = Transaction(
         nonce=89,
         value=0,
-        receiver=Address.new_from_bech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"),
-        sender=Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"),
+        receiver=Address.new_from_bech32("drt18h03w0y7qtqwtra3u4f0gu7e3kn2fslj83lqxny39m5c4rwaectswerhd2"),
+        sender=Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"),
         data=None,
         gas_price=1000000000,
         gas_limit=50000,
@@ -55,6 +55,6 @@ def test_sign_and_verify_transaction():
     tx.signature = keypair.sign(serialized_tx)
     assert (
         tx.signature.hex()
-        == "b56769014f2bdc5cf9fc4a05356807d71fcf8775c819b0f1b0964625b679c918ffa64862313bfef86f99b38cb84fcdb16fa33ad6eb565276616723405cd8f109"
+        == "a492169c5372dc178f58a6b7f6226350bdae659ae5bd21447e11c3e3dd9f8347d353921b86b02f13aa7044155d7bf0f1bd9529e0f0801abe6f872040d2571e0e"
     )
     assert keypair.verify(serialized_tx, tx.signature)

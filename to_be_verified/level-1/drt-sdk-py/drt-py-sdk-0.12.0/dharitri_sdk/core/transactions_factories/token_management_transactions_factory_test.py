@@ -5,9 +5,9 @@ from dharitri_sdk.core.transactions_factories.token_management_transactions_fact
 from dharitri_sdk.core.transactions_factories.transactions_factory_config import \
     TransactionsFactoryConfig
 
-frank = Address.new_from_bech32("drt1kdl46yctawygtwg2k462307dmz2v55c605737dp3zkxh04sct7asacg58j")
-grace = Address.new_from_bech32("drt1r69gk66fmedhhcg24g2c5kn2f2a5k4kvpr6jfw67dn2lyydd8cfsncd6w8")
-alice = Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")
+frank = Address.new_from_bech32("drt10xpcr2cqud9vm6q4axfv64ek63k7xywfcy8zyjp7pvx3kr4cnqlqv3scy7")
+grace = Address.new_from_bech32("drt1kgxjlszkqcvccecuvl5r64c7cju7jqwp5kh22w4e6crf827peljqcvleft")
+alice = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l")
 factory = TokenManagementTransactionsFactory(TransactionsFactoryConfig("T"))
 
 
@@ -128,7 +128,7 @@ def test_create_transaction_for_setting_special_role_on_non_fungible_token():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == "setSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@44434454526f6c654e4654437265617465@44434454526f6c654e465455706461746541747472696275746573@44434454526f6c654e4654416464555249@44434454526f6c654d6f6469667943726561746f72@44434454526f6c654e46545265637265617465"
+    assert transaction.data.decode() == "setSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@44434454526f6c654e4654437265617465@44434454526f6c654e465455706461746541747472696275746573@44434454526f6c654e4654416464555249@44434454526f6c654d6f6469667943726561746f72@44434454526f6c654e46545265637265617465"
     assert transaction.sender == frank.to_bech32()
     assert transaction.receiver == "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2"
     assert transaction.value == 0
@@ -148,7 +148,7 @@ def test_create_transaction_for_unsetting_special_role_on_non_fungible_token():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == "unSetSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@44434454526f6c654e465455706461746541747472696275746573@44434454526f6c654e4654416464555249@44434454526f6c654d6f6469667943726561746f72@44434454526f6c654e46545265637265617465"
+    assert transaction.data.decode() == "unSetSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@44434454526f6c654e465455706461746541747472696275746573@44434454526f6c654e4654416464555249@44434454526f6c654d6f6469667943726561746f72@44434454526f6c654e46545265637265617465"
     assert transaction.sender == frank.to_bech32()
     assert transaction.receiver == "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2"
     assert transaction.value == 0
@@ -163,7 +163,7 @@ def test_set_roles_on_nft():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == "setSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@444344545472616e73666572526f6c65"
+    assert transaction.data.decode() == "setSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@444344545472616e73666572526f6c65"
     assert transaction.sender == frank.to_bech32()
     assert transaction.receiver == "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2"
     assert transaction.value == 0
@@ -183,7 +183,7 @@ def test_set_roles_on_nft():
         add_role_dcdt_transfer_role=True,
         add_role_nft_add_uri=True
     )
-    assert transaction.data.decode() == "setSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@44434454526f6c654e4654437265617465@44434454526f6c654e46544275726e@44434454526f6c654e465455706461746541747472696275746573@44434454526f6c654e4654416464555249@444344545472616e73666572526f6c65@44434454526f6c654e4654557064617465@44434454526f6c654d6f64696679526f79616c74696573@44434454526f6c655365744e6577555249@44434454526f6c654d6f6469667943726561746f72@44434454526f6c654e46545265637265617465"
+    assert transaction.data.decode() == "setSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@44434454526f6c654e4654437265617465@44434454526f6c654e46544275726e@44434454526f6c654e465455706461746541747472696275746573@44434454526f6c654e4654416464555249@444344545472616e73666572526f6c65@44434454526f6c654e4654557064617465@44434454526f6c654d6f64696679526f79616c74696573@44434454526f6c655365744e6577555249@44434454526f6c654d6f6469667943726561746f72@44434454526f6c654e46545265637265617465"
 
 
 def test_create_transaction_for_creating_nft():
@@ -218,7 +218,7 @@ def test_create_transaction_for_setting_special_role_on_fungible_token():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == f"setSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@{mint_role_as_hex}"
+    assert transaction.data.decode() == f"setSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@{mint_role_as_hex}"
     assert transaction.sender == frank.to_bech32()
     assert transaction.value == 0
 
@@ -236,7 +236,7 @@ def test_create_transaction_for_unsetting_special_role_on_fungible_token():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == f"unSetSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@{mint_role_as_hex}"
+    assert transaction.data.decode() == f"unSetSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@{mint_role_as_hex}"
     assert transaction.sender == frank.to_bech32()
     assert transaction.value == 0
 
@@ -256,7 +256,7 @@ def test_set_all_roles_on_fungible_token():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == f"setSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@{mint_role_as_hex}@{burn_role_as_hex}@{transfer_role_as_hex}"
+    assert transaction.data.decode() == f"setSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@{mint_role_as_hex}@{burn_role_as_hex}@{transfer_role_as_hex}"
     assert transaction.sender == frank.to_bech32()
     assert transaction.value == 0
 
@@ -273,7 +273,7 @@ def test_create_transaction_for_setting_special_role_on_semi_fungible_token():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == "setSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@44434454526f6c654e4654437265617465@44434454526f6c654e46544275726e@44434454526f6c654e46544164645175616e74697479@444344545472616e73666572526f6c65"
+    assert transaction.data.decode() == "setSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@44434454526f6c654e4654437265617465@44434454526f6c654e46544275726e@44434454526f6c654e46544164645175616e74697479@444344545472616e73666572526f6c65"
     assert transaction.sender == frank.to_bech32()
     assert transaction.value == 0
 
@@ -289,7 +289,7 @@ def test_create_transaction_for_unsetting_special_role_on_semi_fungible_token():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == "unSetSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@44434454526f6c654e46544275726e@44434454526f6c654e46544164645175616e74697479@444344545472616e73666572526f6c65"
+    assert transaction.data.decode() == "unSetSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@44434454526f6c654e46544275726e@44434454526f6c654e46544164645175616e74697479@444344545472616e73666572526f6c65"
     assert transaction.sender == frank.to_bech32()
     assert transaction.value == 0
 
@@ -326,7 +326,7 @@ def test_create_transaction_for_freezing():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == "freeze@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13"
+    assert transaction.data.decode() == "freeze@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4"
     assert transaction.sender == frank.to_bech32()
     assert transaction.value == 0
 
@@ -339,7 +339,7 @@ def test_create_transaction_for_unfreezing():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == "unFreeze@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13"
+    assert transaction.data.decode() == "unFreeze@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4"
     assert transaction.sender == frank.to_bech32()
     assert transaction.value == 0
 
@@ -444,7 +444,7 @@ def test_create_transaction_for_wiping():
     )
 
     assert transaction.data
-    assert transaction.data.decode() == "wipe@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13"
+    assert transaction.data.decode() == "wipe@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4"
     assert transaction.sender == frank.to_bech32()
     assert transaction.value == 0
 
