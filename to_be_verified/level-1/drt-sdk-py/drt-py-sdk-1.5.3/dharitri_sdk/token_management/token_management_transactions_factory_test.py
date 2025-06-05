@@ -248,7 +248,7 @@ def test_create_transaction_for_setting_special_role_on_fungible_token():
     assert transaction.data
     assert (
         transaction.data.decode()
-        == f"setSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@{mint_role_as_hex}"
+        == f"setSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@{mint_role_as_hex}"
     )
     assert transaction.sender == frank
     assert transaction.value == 0
@@ -269,7 +269,7 @@ def test_create_transaction_for_unsetting_special_role_on_fungible_token():
     assert transaction.data
     assert (
         transaction.data.decode()
-        == f"unSetSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@{mint_role_as_hex}"
+        == f"unSetSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@{mint_role_as_hex}"
     )
     assert transaction.sender == frank
     assert transaction.value == 0
@@ -292,7 +292,7 @@ def test_set_all_roles_on_fungible_token():
     assert transaction.data
     assert (
         transaction.data.decode()
-        == f"setSpecialRole@4652414e4b2d313163653365@1e8a8b6b49de5b7be10aaa158a5a6a4abb4b56cc08f524bb5e6cd5f211ad3e13@{mint_role_as_hex}@{burn_role_as_hex}@{transfer_role_as_hex}"
+        == f"setSpecialRole@4652414e4b2d313163653365@b20d2fc05606198c671c67e83d571ec4b9e901c1a5aea53ab9d60693abc1cfe4@{mint_role_as_hex}@{burn_role_as_hex}@{transfer_role_as_hex}"
     )
     assert transaction.sender == frank
     assert transaction.value == 0

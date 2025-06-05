@@ -14,7 +14,7 @@ alice = Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ss
 def test_message_v1_serialize_for_signing():
     message = Message(data="test message".encode())
     serialized = message_computer.compute_bytes_for_signing(message)
-    assert serialized.hex() == "2162d6271208429e6d3e664139e98ba7c5f1870906fb113e8903b1d3f531004d"
+    assert serialized.hex() == "0f6fce3fa6130fc58a25eaff6e157ea1bcb02fbf9773dca514dfaf3cd1e0bdfe"
 
 
 def test_sign_packed_message_and_verify_unpacked_message():

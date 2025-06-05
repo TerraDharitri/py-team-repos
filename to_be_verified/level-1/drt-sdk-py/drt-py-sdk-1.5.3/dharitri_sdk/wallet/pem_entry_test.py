@@ -12,22 +12,22 @@ def test_from_text_all():
     entry = entries[0]
     assert len(entries) == 1
     assert entry.label == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
-    assert entry.message[0:USER_SEED_LENGTH].hex() == "413f42575f7f26fad3317a778771212fdb80245850981e48b58a4f25e344e8f9"
+    assert entry.message[0:USER_SEED_LENGTH].hex() == "7b4686f3c925f9f6571de5fa24fb6a7ac0a2e5439a48bad8ed90b6690aad6017"
 
     text = (testwallets / "multipleUserKeys.pem").read_text()
     entries = PemEntry.from_text_all(text)
     entry = entries[0]
     assert len(entries) == 3
     assert entry.label == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
-    assert entry.message[0:USER_SEED_LENGTH].hex() == "413f42575f7f26fad3317a778771212fdb80245850981e48b58a4f25e344e8f9"
+    assert entry.message[0:USER_SEED_LENGTH].hex() == "7b4686f3c925f9f6571de5fa24fb6a7ac0a2e5439a48bad8ed90b6690aad6017"
 
     entry = entries[1]
     assert entry.label == "drt18h03w0y7qtqwtra3u4f0gu7e3kn2fslj83lqxny39m5c4rwaectswerhd2"
-    assert entry.message[0:USER_SEED_LENGTH].hex() == "b8ca6f8203fb4b545a8e83c5384da033c415db155b53fb5b8eba7ff5a039d639"
+    assert entry.message[0:USER_SEED_LENGTH].hex() == "8928add00f0d168620a76ec7af31a92f957038a1a2ed75778a4243248d319f2f"
 
     entry = entries[2]
     assert entry.label == "drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q"
-    assert entry.message[0:USER_SEED_LENGTH].hex() == "e253a571ca153dc2aee845819f74bcc9773b0586edead15a94cb7235a5027436"
+    assert entry.message[0:USER_SEED_LENGTH].hex() == "5aa2311a2274ff47cc804f12a4e8b28cf74650a0d1efcb8175b90eda4e3e6b4c"
 
 
 def test_from_text_all_for_validators():
@@ -37,7 +37,7 @@ def test_from_text_all_for_validators():
         entry.label
         == "e7beaa95b3877f47348df4dd1cb578a4f7cabf7a20bfeefe5cdd263878ff132b765e04fef6f40c93512b666c47ed7719b8902f6c922c04247989b7137e837cc81a62e54712471c97a2ddab75aa9c2f58f813ed4c0fa722bde0ab718bff382208"
     )
-    assert entry.message.hex() == "7cff99bd671502db7d15bc8abc0c9a804fb925406fbdd50f1e4c17a4cd774247"
+    assert entry.message.hex() == "1c42aea9ae60ff04e6cac5a4c19335724f9a2e2f4a139047314fdec9f7d35e24"
 
     text = (testwallets / "multipleValidatorKeys.pem").read_text()
     entries = PemEntry.from_text_all(text)

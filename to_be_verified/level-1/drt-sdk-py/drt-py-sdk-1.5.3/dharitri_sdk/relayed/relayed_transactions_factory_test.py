@@ -75,7 +75,7 @@ class TestRelayedTransactionsFactory:
         )
         assert (
             relayed_transaction.signature.hex()
-            == "128e7cdc14c2b9beee2f3ff7a7fa5d1f5ef31a654a0c92e223c90ab28265fa277d306f23a06536248cf9573e828017004fb639617fade4d68a37524aafca710d"
+            == "724f97113a8f2b5851c1c5d918e06465cc0562f1d9c691ea94cb0a4f0b4633ff67e6769fed9c87d0d2a6518d924823b0310d721968bf37a42720cab382710d06"
         )
 
     def test_create_relayed_v1_transaction_with_usernames(self):

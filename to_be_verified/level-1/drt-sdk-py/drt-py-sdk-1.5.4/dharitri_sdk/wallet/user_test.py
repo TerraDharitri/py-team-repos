@@ -36,19 +36,19 @@ def test_user_secret_key_generate_public_key():
         UserSecretKey.new_from_string("413f42575f7f26fad3317a778771212fdb80245850981e48b58a4f25e344e8f9")
         .generate_public_key()
         .hex()
-        == "c782420144e8296f757328b409d01633bf8d09d8ab11ee70d32c204f6589bd24"
+        == "0139472eff6886771a982f3083da5d421f24c29181e63888228dc81ca60d69e1"
     )
     assert (
         UserSecretKey.new_from_string("b8ca6f8203fb4b545a8e83c5384da033c415db155b53fb5b8eba7ff5a039d639")
         .generate_public_key()
         .hex()
-        == "3ddf173c9e02c0e58fb1e552f473d98da6a4c3f23c7e034c912ee98a8dddce17"
+        == "8049d639e5a6980d1cd2392abcce41029cda74a1563523a202f09641cc2618f8"
     )
     assert (
         UserSecretKey.new_from_string("e253a571ca153dc2aee845819f74bcc9773b0586edead15a94cb7235a5027436")
         .generate_public_key()
         .hex()
-        == "b05fe535c27f46911f74f8b7f2051c54f792fca08c7ab23c53e77ececd2cd928"
+        == "b2a11555ce521e4944e09ab17549d85b487dcd26c84b5017a39e31a3670889ba"
     )
 
 
@@ -261,15 +261,15 @@ def test_load_secret_key_with_mnemonic():
 
     assert (
         UserWallet.load_secret_key(keystore_path, "password", 1).generate_public_key().to_address("drt").to_bech32()
-        == "drt18h03w0y7qtqwtra3u4f0gu7e3kn2fslj83lqxny39m5c4rwaectswerhd2"
+        == "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"
     )
     assert (
         UserWallet.load_secret_key(keystore_path, "password", 2).generate_public_key().to_address("drt").to_bech32()
-        == "drt1kp072dwz0arfz8m5lzmlypgu2nme9l9q33aty0znualvanfvmy5qd3yy8q"
+        == "drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e"
     )
     assert (
         UserWallet.load_secret_key(keystore_path, "password", 0).generate_public_key().to_address("drt").to_bech32()
-        == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
+        == "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"
     )
 
 

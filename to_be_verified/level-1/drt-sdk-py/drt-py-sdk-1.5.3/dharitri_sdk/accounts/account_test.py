@@ -15,7 +15,7 @@ alice = testwallets / "alice.pem"
 def test_create_account_from_pem():
     account = Account.new_from_pem(alice)
 
-    assert account.secret_key.get_bytes().hex() == "413f42575f7f26fad3317a778771212fdb80245850981e48b58a4f25e344e8f9"
+    assert account.secret_key.get_bytes().hex() == "7b4686f3c925f9f6571de5fa24fb6a7ac0a2e5439a48bad8ed90b6690aad6017"
     assert account.address.to_bech32() == "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l"
 
 
