@@ -6,4 +6,4 @@ ledgercomm[hid]
 rich==13.3.4
 argcomplete==3.2.2
 
-dharitri-sdk[ledger]==1.2.0
+-e /home/dugong/Desktop/teja-work/my_python_works/py-team-repos/to_be_verified/level-1/drt-sdk-py/drt-py-sdk-1.2.0

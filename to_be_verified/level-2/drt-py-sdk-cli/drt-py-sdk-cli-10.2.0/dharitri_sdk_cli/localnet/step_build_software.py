@@ -70,7 +70,7 @@ def _set_rpath(cmd_path: Path):
     Set the rpath of the executable to the current directory, on a best-effort basis.
 
     For other occurrences of this approach, see:
-     - https://github.com/TerraDharitri/drt-chain-scenario-cli-go/blob/master/.github/workflows/on_release_attach_artifacts.yml
+     - https://github.com/TerraDharitri/drt-chain-scenario-cli-go/blob/main/.github/workflows/on_release_attach_artifacts.yml
     """
 
     if not workstation.is_osx():

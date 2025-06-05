@@ -25,7 +25,7 @@ def test_contract_verification_create_request_signature():
 
     assert (
         signature.hex()
-        == "30111258cc42ea08e0c6a3e053cc7086a88d614b8b119a244904e9a19896c73295b2fe5c520a1cb07cfe20f687deef9f294a0a05071e85c78a70a448ea5f0605"
+        == "7620b2754d03872720f8eb00d81365f37c670216c2a73695f2c3fbd1d2ae3fdb49a3a0a9f7f9f91b4a2cc8fa2effba3c16a44d08443db43da4f59ae1ba6e0400"
     )
 
 
@@ -37,7 +37,7 @@ def test_prepare_args_for_factories():
         "false",
         "true",
         "str:test-string",
-        "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
+        "drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l",
     ]
 
     arguments = sc._prepare_args_for_factory(args)
@@ -48,5 +48,5 @@ def test_prepare_args_for_factories():
     assert arguments[4].get_payload() == "test-string"
     assert (
         arguments[5].get_payload()
-        == Address.new_from_bech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf").get_public_key()
+        == Address.new_from_bech32("drt1c7pyyq2yaq5k7atn9z6qn5qkxwlc6zwc4vg7uuxn9ssy7evfh5jq4nm79l").get_public_key()
     )
