@@ -11,8 +11,8 @@ docker build --network host . -t sdk-rust-contract-builder:next -f ./Dockerfile
 Maintainers can publish the image as follows:
 
 ```
-docker build --network host . -t dharitri/sdk-rust-contract-builder:next -f ./Dockerfile
-docker push dharitri/sdk-rust-contract-builder:next
+docker build --network host . -t terradharitri/sdk-rust-contract-builder:next -f ./Dockerfile
+docker push terradharitri/sdk-rust-contract-builder:next
 ```
 
 ## Build contract using the wrapper
